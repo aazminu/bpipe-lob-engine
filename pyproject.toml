@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bpipe-lob-engine"
+version = "0.2.0"
+description = "Ultra-low-latency Limit Order Book (LOB), SBE/FIX binary market-data feed normalizer, price-time FIFO matching engine, and market microstructure analytics library."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Abdullah Azmi", email = "m4u5t4@u.northwestern.edu" }
+]
+keywords = [
+    "limit-order-book",
+    "market-microstructure",
+    "fix-protocol",
+    "b-pipe",
+    "high-frequency-trading",
+    "quantitative-finance",
+    "matching-engine"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+]
+
+[project.urls]
+Homepage = "https://abdullahazmi.com"
+Repository = "https://github.com/aazminu/bpipe-lob-engine"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-v"
