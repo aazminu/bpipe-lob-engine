@@ -71,3 +71,6 @@ __all__ = [
     "almgren_chriss_trajectory",
     "simulate_schedule_execution",
 ]
+
+from .diagnostics import run_diagnostic_suite, validate_runtime_invariants
+__all__ = list(__all__) + ["run_diagnostic_suite", "validate_runtime_invariants"]
