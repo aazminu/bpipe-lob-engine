@@ -150,3 +150,18 @@ schedule = twap_schedule(total_quantity=300, num_slices=3, start_ts_ns=2_000, in
 report = simulate_schedule_execution(book, Side.BUY, schedule)
 print(f"Executed VWAP: {report.vwap_execution_price:.4f} | Shortfall: {report.implementation_shortfall_bps:.2f} bps")
 ```
+
+
+## CLI Diagnostics & Invariant Verification
+
+Run the built-in deterministic diagnostic probe and invariant self-check directly via the module CLI:
+
+```bash
+PYTHONPATH=src python -m bpipe_lob --self-test --json
+```
+
+Run the complete regression test suite:
+
+```bash
+PYTHONPATH=src pytest -q
+```
